@@ -1,1 +1,1 @@
-export { L10n } from './src';
+export * from './build/index';

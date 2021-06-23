@@ -1,14 +1,15 @@
 {
   "name": "nodejs-l10n",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "l10n",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run tsc && node build/index.js",
     "tsc": "tsc -p .",
-    "test": "npm run tsc && node build/test/index.js"
+    "test": "npm run tsc && node build/test/index.js",
+    "build": "tsc -p tsconfig.json"
   },
-  "types": "build",
+  "typings": "build/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chessman97/nodejs-l10n.git"
