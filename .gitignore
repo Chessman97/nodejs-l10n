@@ -21,8 +21,10 @@ src/api/schema.gql
 typings/
 
 # Dist #
-build/
+# build
+build/test
 dist/
+locales/
 tsconfig.build.json
 
 # IDE #

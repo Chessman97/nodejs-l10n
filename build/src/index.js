@@ -1,14 +1,13 @@
-import * as path from 'path';
-import * as fs from 'fs';
-
-export class L10n {
-    private locales: string[];
-    private directory: string;
-    private localesFiles: any = {};
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.L10n = void 0;
+const tslib_1 = require("tslib");
+const path = tslib_1.__importStar(require("path"));
+const fs = tslib_1.__importStar(require("fs"));
+class L10n {
     // TODO add file name
-    // TODO spec char (now ${})
-    public constructor(locales: string[], directory: string) {
+    constructor(locales, directory) {
+        this.localesFiles = {};
         console.log(locales);
         console.log(directory);
         // TODO verify locales
@@ -21,22 +20,22 @@ export class L10n {
                     throw new Error('No found file');
                 }
                 this.localesFiles[locale] = JSON.parse(file);
-            } catch (error) {
+            }
+            catch (error) {
                 throw new Error(error.error);
             }
         }
     }
-
-    public searchNotification(notification: string, language: string): string {
+    searchNotification(notification, language) {
         const checkedLanguage = this.resetDefaultChecking(language);
         if (this.localesFiles[checkedLanguage].hasOwnProperty(notification)) {
             return this.localesFiles[checkedLanguage][notification];
-        } else {
+        }
+        else {
             throw new Error('No found notification');
         }
     }
-
-    public searchNotificationWithParams(notification: string, params: string[], language: string): string {
+    searchNotificationWithParams(notification, params, language) {
         const str = this.searchNotification(notification, language);
         let part = str;
         let text = '';
@@ -51,13 +50,14 @@ export class L10n {
         }
         return text;
     }
-
-    private resetDefaultChecking(language: string): string {
+    resetDefaultChecking(language) {
         if (this.locales.indexOf(language) === -1) {
             return 'en';
-        } else {
+        }
+        else {
             return language;
         }
     }
-
 }
+exports.L10n = L10n;
+//# sourceMappingURL=index.js.map

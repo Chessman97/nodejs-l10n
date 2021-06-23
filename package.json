@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "start": "npm run tsc && node build/index.js",
-    "tsc": "tsc -p ."
+    "tsc": "tsc -p .",
+    "test": "npm run tsc && node build/test/index.js"
   },
   "types": "build",
   "repository": {
