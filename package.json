@@ -1,6 +1,6 @@
 {
   "name": "nodejs-l10n",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "l10n",
   "main": "build/index.js",
   "scripts": {

@@ -6,6 +6,7 @@ const path = tslib_1.__importStar(require("path"));
 const fs = tslib_1.__importStar(require("fs"));
 class L10n {
     // TODO add file name
+    // TODO spec char (now ${})
     constructor(locales, directory) {
         this.localesFiles = {};
         console.log(locales);
